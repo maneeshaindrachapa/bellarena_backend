@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const users = require('./Server/routes/user-routes');
+const items = require('./Server/routes/item-routes');
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -17,6 +18,7 @@ app.use(function(req, res, next) {
 });
 
 app.use('/user', users);
+app.use('/item',items);
 
 app.listen(port, () => {
     console.log('Server started on port ' + port );
