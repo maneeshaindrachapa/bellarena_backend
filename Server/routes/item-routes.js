@@ -5,5 +5,6 @@ const check_auth = require("../middleware/check-auth");
 
 
 router.get('/', itemController.getItems); 
+router.post('/favorite',itemController.addFavorites);
 
 module.exports = router;
