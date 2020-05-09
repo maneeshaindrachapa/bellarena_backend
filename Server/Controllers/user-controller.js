@@ -40,6 +40,7 @@ exports.login = function (req, res, next) {
                     if (password == rows[0]['password']) {
                         const token = jwt.sign({
                             user_id: rows[0]["id"],
+                            age:rows[0]['age'],
                             email: rows[0]["email"],
                             password: rows[0]["password"],
                             favoritesAdded :rows[0]['favoritesAdded']
