@@ -11,9 +11,10 @@ exports.register = function (req, res, next) {
     let firstname = req.body.firstname;
     let lastname = req.body.lastname;
     let address = req.body.address;
+    let age = req.body.age;
 
-    let query_ = "INSERT INTO user(email,password,firstname,lastname,address,favoritesAdded) values(?,?,?,?,?,?)";
-    dbConfig.query(query_, [email, password, firstname, lastname, address,0], (err, rows) => {
+    let query_ = "INSERT INTO user(email,password,firstname,lastname,age,address,favoritesAdded) values(?,?,?,?,?,?,?)";
+    dbConfig.query(query_, [email, password, firstname, lastname,age, address,0], (err, rows) => {
         if (err) {
             console.log("Error Connecting to Server !");
             console.log(err);
